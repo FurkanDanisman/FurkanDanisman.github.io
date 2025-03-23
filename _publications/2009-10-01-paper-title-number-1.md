@@ -6,7 +6,7 @@ permalink: /publication/2023-07-01-metu-college-life-satisfaction
 excerpt: 'An analysis of METU students’ college life satisfaction using statistical methods.'
 date: 2023-07-01
 venue: 'International Journal of Social Science Research and Review'
-slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
+slidesurl: 'http://FurkanDanisman.github.io/files/slides1.pdf'
 paperurl: 'https://doi.org/10.47814/ijssrr.v6i7.1261'
 citation: 'Danisman, F., Kilic, S.I., Amini, N., Ada, O.O., Aktas, S.G., Sarul, G. (2023). "METU students’ college life satisfaction." <i>International Journal of Social Science Research and Review</i>, 6(7), 12-37.'
 ---
