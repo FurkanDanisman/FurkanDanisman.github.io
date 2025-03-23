@@ -12,10 +12,10 @@ author_profile: true
     {% if post.category == "manuscripts" %}
       <li>
         <a href="{{ post.paperurl }}" target="_blank">{{ post.title }}</a>
-        <br>
-        <small>{{ post.citation }}</small>
-        <small>{{ post.excerpt }}</small>
-        
+      <br>
+      <small>{{ post.citation }}</small>
+      <br>
+      <small>{{ post.excerpt }}</small>
       </li>
     {% endif %}
   {% endfor %}
