@@ -5,26 +5,30 @@ permalink: /publications/
 author_profile: true
 ---
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
+<!-- Publications Section -->
+<h2>Publications</h2><hr />
+<ul>
   {% for post in site.publications reversed %}
-    {% include archive-single.html %}
+    {% if post.category == "manuscripts" %}
+      <li>
+        <a href="{{ post.paperurl }}" target="_blank">{{ post.title }}</a>
+        <br>
+        <small>{{ post.citation }}</small>
+      </li>
+    {% endif %}
   {% endfor %}
-{% endif %}
+</ul>
 
-
-
+<!-- Working Papers Section -->
+<h2>Working Papers</h2><hr />
+<ul>
+  {% for post in site.publications reversed %}
+    {% if post.category == "Working Paper" %}
+      <li>
+        {{ post.title }}
+        <br>
+        <small>{{ post.citation }}</small>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
