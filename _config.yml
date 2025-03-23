@@ -22,7 +22,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "possible_photo.jpeg"
+  avatar           : "possible_photo.png"
   name             : "Furkan Danisman"
   pronouns         : # example: "she/her"  
   bio              : "Research Assistant"
