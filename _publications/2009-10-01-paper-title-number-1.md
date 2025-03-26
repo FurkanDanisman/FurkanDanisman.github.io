@@ -5,6 +5,6 @@ category: manuscripts
 excerpt: 'An analysis of METU students’ college life satisfaction using statistical methods.'
 venue: 'International Journal of Social Science Research and Review'
 paperurl: 'https://doi.org/10.47814/ijssrr.v6i7.1261'
-citation: 'Furkan Berk Danisman, Sila Ilyurek Kilic, Niyusha Amini, Osman Orcun Ada, Sena Aktas, Gizem Arslan'
+citation: '<b>Furkan Danisman</b>, Ilyurek Kilic, Niyusha Amini, Osman Ada, Sena Aktas, Gizem Arslan'
 imageurl: '/assets/images/publications/METU_Photo.png'
 ---
