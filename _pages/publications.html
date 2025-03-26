@@ -16,9 +16,12 @@ author_profile: true
           <img src="{{ post.imageurl }}" alt="Publication Image" style="width:100px;height:auto;">
         </div>
         <div class="publication-details">
-          <h3 style="margin:0; font-weight:bold;">{{ post.title }}</h3>
-          <p style="margin:0;">{{ post.citation }}</p>
-          <a href="{{ post.paperurl }}" target="_blank">Paper</a>
+          <h3 class="publication-title">{{ post.title }}</h3>
+          <p class="publication-citation">{{ post.citation }}</p>
+          {% if post.paperurl %}
+            <a href="{{ post.paperurl }}" target="_blank" class="publication-link">Paper</a>
+          {% endif %}
+          <p class="publication-excerpt">{{ post.excerpt }}</p>
         </div>
       </div>
       <hr />
@@ -37,8 +40,9 @@ author_profile: true
           <img src="{{ post.imageurl }}" alt="Working Paper Image" style="width:100px;height:auto;">
         </div>
         <div class="publication-details">
-          <h3 style="margin:0; font-weight:bold;">{{ post.title }}</h3>
-          <p style="margin:0;">{{ post.citation }}</p>
+          <h3 class="publication-title">{{ post.title }}</h3>
+          <p class="publication-citation">{{ post.citation }}</p>
+          <p class="publication-excerpt">{{ post.excerpt }}</p>
         </div>
       </div>
       <hr />
@@ -46,28 +50,60 @@ author_profile: true
   {% endfor %}
 </div>
 
+<!-- Styling -->
 <style>
 .publication-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+
 .publication-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
 }
+
 .publication-image img {
   border-radius: 5px;
   margin-right: 10px;
 }
+
 .publication-details {
   flex: 1;
 }
+
+.publication-title {
+  margin: 0 0 8px 0;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.publication-citation {
+  margin: 0 0 5px 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.publication-excerpt {
+  margin: 0;
+  color: #777;
+}
+
+.publication-link {
+  margin: 5px 0;
+  display: inline-block;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.publication-link:hover {
+  text-decoration: underline;
+}
+
 hr {
   border: none;
   border-top: 1px solid #ddd;
   margin: 1rem 0;
 }
 </style>
-
