@@ -4,5 +4,5 @@ collection: publications
 category: Working Paper
 excerpt: 'A study on the rate of change in breast density as a parameter for assessing breast cancer risk.'
 venue: 'Scientific Reports (Submitted)'
-citation: 'Zeynep İsil Kalaylioglu, Lutfi Dogan, Furkan Berk Danisman.'
+citation: 'Zeynep İsil Kalaylioglu, Lutfi Dogan, <b>Furkan Danisman</b>.'
 ---
