@@ -13,7 +13,7 @@ author_profile: true
       <div class="publication-item">
         <div class="publication-image">
           <!-- Placeholder for image, you can link to an actual image in your front matter -->
-          <img src="{{ post.imageurl }}" alt="Publication Image" style="width:100px;height:auto;">
+          <img src="{{ post.imageurl }}" alt="Publication Image" style="width:150px;height:auto;">
         </div>
         <div class="publication-details">
           <h3 class="publication-title">{{ post.title }}</h3>
@@ -36,7 +36,7 @@ author_profile: true
       <div class="publication-item">
         <div class="publication-image">
           <!-- Placeholder for image, you can link to an actual image in your front matter -->
-          <img src="{{ post.imageurl }}" alt="Working Paper Image" style="width:100px;height:auto;">
+          <img src="{{ post.imageurl }}" alt="Working Paper Image" style="width:150px;height:auto;">
         </div>
         <div class="publication-details">
           <h3 class="publication-title">{{ post.title }}</h3>
@@ -72,31 +72,15 @@ author_profile: true
 }
 
 .publication-title {
-  margin: 0 0 8px 0;
+  margin: 0 0 15px 0;
   font-weight: bold;
   font-size: 1.2em;
 }
 
 .publication-citation {
-  margin: 0 0 5px 0;
+  margin: 0;
   font-size: 0.9em;
   color: #555;
-}
-
-.publication-excerpt {
-  margin: 0;
-  color: #777;
-}
-
-.publication-link {
-  margin: 5px 0;
-  display: inline-block;
-  color: #007bff;
-  text-decoration: none;
-}
-
-.publication-link:hover {
-  text-decoration: underline;
 }
 
 hr {
