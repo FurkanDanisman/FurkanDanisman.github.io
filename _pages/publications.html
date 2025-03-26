@@ -7,30 +7,70 @@ author_profile: true
 
 <!-- Publications Section -->
 <h2>Publications</h2><hr />
-<ul>
+<div class="publication-list">
   {% for post in site.publications reversed %}
     {% if post.category == "manuscripts" %}
-      <li>
-        <a href="{{ post.paperurl }}" target="_blank">{{ post.title }}</a>
-      <br>
-      <small>{{ post.citation }}</small>
-      <br>
-      <small>{{ post.excerpt }}</small>
-      </li>
+      <div class="publication-item">
+        <div class="publication-image">
+          <!-- Placeholder for image, you can link to an actual image in your front matter -->
+          <img src="{{ post.imageurl }}" alt="Publication Image" style="width:100px;height:auto;">
+        </div>
+        <div class="publication-details">
+          <h3 style="margin:0; font-weight:bold;">{{ post.title }}</h3>
+          <p style="margin:0;">{{ post.citation }}</p>
+          <a href="{{ post.paperurl }}" target="_blank">Paper</a>
+          <p style="margin:0;">{{ post.excerpt }}</p>
+        </div>
+      </div>
+      <hr />
     {% endif %}
   {% endfor %}
-</ul>
+</div>
 
 <!-- Working Papers Section -->
 <h2>Working Papers</h2><hr />
-<ul>
+<div class="publication-list">
   {% for post in site.publications reversed %}
     {% if post.category == "Working Paper" %}
-      <li>
-        {{ post.citation }}
-        <br>
-        <small>{{ post.excerpt }}</small>
-      </li>
+      <div class="publication-item">
+        <div class="publication-image">
+          <!-- Placeholder for image, you can link to an actual image in your front matter -->
+          <img src="{{ post.imageurl }}" alt="Working Paper Image" style="width:100px;height:auto;">
+        </div>
+        <div class="publication-details">
+          <h3 style="margin:0; font-weight:bold;">{{ post.title }}</h3>
+          <p style="margin:0;">{{ post.citation }}</p>
+          <a href="{{ post.paperurl }}" target="_blank">Paper</a>
+          <p style="margin:0;">{{ post.excerpt }}</p>
+        </div>
+      </div>
+      <hr />
     {% endif %}
   {% endfor %}
-</ul>
+</div>
+
+<style>
+.publication-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.publication-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.publication-image img {
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.publication-details {
+  flex: 1;
+}
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 1rem 0;
+}
+</style>
+
