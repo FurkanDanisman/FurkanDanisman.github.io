@@ -4,5 +4,5 @@ collection: publications
 category: Working Paper
 excerpt: 'An innovative approach to density estimation for grouped data using an adjusted log-concave density estimation algorithm.'
 venue: 'To be submitted'
-citation: 'Hanna Jankowski, Camila de Souza, Furkan Danisman.'
+citation: 'Hanna Jankowski, Camila de Souza, <b>Furkan Danisman</b>.'
 ---
