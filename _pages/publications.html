@@ -5,157 +5,86 @@ permalink: /publications/
 author_profile: true
 ---
 
-<!-- Peer-Reviewed Journal Articles -->
-<h2>Peer-Reviewed Journal Articles</h2><hr />
-<div class="publication-list">
-  {% assign pubs = site.publications | sort: 'date' | reverse %}
+{% assign pubs = site.publications | sort: 'date' | reverse %}
+
+<h2>Peer-Reviewed Journal Articles</h2>
+<ol class="pub-list">
   {% for post in pubs %}
     {% if post.category == "manuscripts" %}
-      <div class="publication-item">
-        <div class="publication-details">
-          <h3 class="publication-title">{{ post.title }}</h3>
-          <p class="publication-venue">{{ post.venue }}</p>
-          <p class="publication-citation">{{ post.citation }}</p>
-          {% if post.paperurl %}
-            <a href="{{ post.paperurl }}" target="_blank" class="publication-link">Paper</a>
-          {% endif %}
-        </div>
-      </div>
-      <hr />
+      <li>
+        {{ post.citation }} <em>{{ post.title }}.</em> {{ post.venue }}.
+        {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank">[Paper]</a>{% endif %}
+      </li>
     {% endif %}
   {% endfor %}
-</div>
+</ol>
 
-<!-- Under Review -->
-<h2>Under Review</h2><hr />
-<div class="publication-list">
+<h2>Under Review</h2>
+<ol class="pub-list">
   {% for post in pubs %}
     {% if post.category == "underreview" %}
-      <div class="publication-item">
-        <div class="publication-details">
-          <h3 class="publication-title">{{ post.title }}</h3>
-          <p class="publication-venue">{{ post.venue }}</p>
-          <p class="publication-citation">{{ post.citation }}</p>
-          {% if post.paperurl %}
-            <a href="{{ post.paperurl }}" target="_blank" class="publication-link">Paper</a>
-          {% endif %}
-        </div>
-      </div>
-      <hr />
+      <li>
+        {{ post.citation }} <em>{{ post.title }}.</em> {{ post.venue }}.
+        {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank">[Paper]</a>{% endif %}
+      </li>
     {% endif %}
   {% endfor %}
-</div>
+</ol>
 
-<!-- Other Peer-Reviewed Contributions -->
-<h2>Other Peer-Reviewed Contributions</h2><hr />
-<div class="publication-list">
+<h2>Other Peer-Reviewed Contributions</h2>
+<ol class="pub-list">
   {% for post in pubs %}
     {% if post.category == "conferences" %}
-      <div class="publication-item">
-        <div class="publication-details">
-          <h3 class="publication-title">{{ post.title }}</h3>
-          <p class="publication-venue">{{ post.venue }}</p>
-          <p class="publication-citation">{{ post.citation }}</p>
-          {% if post.paperurl %}
-            <a href="{{ post.paperurl }}" target="_blank" class="publication-link">Paper</a>
-          {% endif %}
-        </div>
-      </div>
-      <hr />
+      <li>
+        {{ post.citation }} <em>{{ post.title }}.</em> {{ post.venue }}.
+        {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank">[Paper]</a>{% endif %}
+      </li>
     {% endif %}
   {% endfor %}
-</div>
+</ol>
 
-<!-- Non-Peer-Reviewed Contributions -->
-<h2>Non-Peer-Reviewed Contributions</h2><hr />
-<div class="publication-list">
+<h2>Non-Peer-Reviewed Contributions</h2>
+<ol class="pub-list">
   {% for post in pubs %}
     {% if post.category == "nonpeerreviewed" %}
-      <div class="publication-item">
-        <div class="publication-details">
-          <h3 class="publication-title">{{ post.title }}</h3>
-          <p class="publication-venue">{{ post.venue }}</p>
-          <p class="publication-citation">{{ post.citation }}</p>
-          {% if post.paperurl %}
-            <a href="{{ post.paperurl }}" target="_blank" class="publication-link">Paper</a>
-          {% endif %}
-        </div>
-      </div>
-      <hr />
+      <li>
+        {{ post.citation }} <em>{{ post.title }}.</em> {{ post.venue }}.
+        {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank">[Paper]</a>{% endif %}
+      </li>
     {% endif %}
   {% endfor %}
-</div>
+</ol>
 
-<!-- Working Papers -->
-<h2>Working Papers</h2><hr />
-<div class="publication-list">
+<h2>Working Papers</h2>
+<ol class="pub-list">
   {% for post in pubs %}
     {% if post.category == "workingpapers" %}
-      <div class="publication-item">
-        <div class="publication-details">
-          <h3 class="publication-title">{{ post.title }}</h3>
-          <p class="publication-citation">{{ post.citation }}</p>
-        </div>
-      </div>
-      <hr />
+      <li>
+        {{ post.citation }} <em>{{ post.title }}.</em>
+      </li>
     {% endif %}
   {% endfor %}
-</div>
+</ol>
 
-<!-- Styling -->
 <style>
-.publication-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.publication-item {
-  display: flex;
-  align-items: flex-start;
-}
-
-.publication-details {
-  flex: 1;
-}
-
-.publication-title {
-  margin: 0 0 5px 0;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-.publication-venue {
-  margin: 0 0 5px 0;
-  font-size: 0.9em;
-  font-style: italic;
-  color: #777;
-}
-
-.publication-citation {
-  margin: 0 0 8px 0;
-  font-size: 0.9em;
-  color: #555;
-}
-
-.publication-link {
-  display: inline-block;
-  padding: 3px 10px;
+.pub-list {
   font-size: 0.85em;
-  border: 1px solid #494e52;
-  border-radius: 3px;
+  line-height: 1.5;
+  padding-left: 1.5em;
+}
+.pub-list li {
+  margin-bottom: 0.5em;
+}
+.pub-list a {
   color: #494e52;
   text-decoration: none;
 }
-
-.publication-link:hover {
-  background-color: #494e52;
-  color: #fff;
+.pub-list a:hover {
+  text-decoration: underline;
 }
-
-hr {
-  border: none;
-  border-top: 1px solid #ddd;
-  margin: 1rem 0;
+h2 {
+  font-size: 1.15em;
+  margin-top: 1.5em;
+  margin-bottom: 0.3em;
 }
 </style>
