@@ -25,9 +25,9 @@ author:
   avatar           : "possible_photo.png"
   name             : "Furkan Danisman"
   pronouns         : # example: "she/her"  
-  bio              : "Research Assistant"
-  location         : 
-  employer         : "Bank of Canada"
+  bio              : "PhD Student in Statistics"
+  location         : "Toronto, Canada"
+  employer         : "University of Toronto"
   uri              : # URL
   email            : "furkandanisman@gmail.com" 
 
@@ -76,12 +76,14 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  books:
-    title: 'Books'
   manuscripts:
-    title: 'Journal Articles'    
+    title: 'Peer-Reviewed Journal Articles'
+  underreview:
+    title: 'Under Review'
   conferences:
-    title: 'Conference Papers'
+    title: 'Other Peer-Reviewed Contributions'
+  nonpeerreviewed:
+    title: 'Non-Peer-Reviewed Contributions'
   workingpapers:
     title: 'Working Papers'
 
