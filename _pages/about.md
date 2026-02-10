@@ -15,4 +15,4 @@ Before this, I was a Research Assistant at the [Bank of Canada](https://www.bank
 
 Lately, I've been drawn to the intersection of large language models (LLMs) and causality. My ultimate goal in life is to be friends with a gorilla.
 
-![Gorilla](/images/gorilla.jpg)
+<img src="/images/gorilla.jpg" alt="Gorilla" style="width:150px;border-radius:6px;">
