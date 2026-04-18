@@ -22,7 +22,7 @@ repository               : "FurkanDanisman/FurkanDanisman.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "possible_photo.png"
+  avatar           : "Prof_HeadShot.png"
   name             : "Furkan Danisman"
   pronouns         : # example: "she/her"  
   bio              : "PhD Student in Statistics"
