@@ -61,7 +61,7 @@ author_profile: true
     li.dataset.year = y || '';
   });
 
-  // summary strip
+  /* summary strip */
   var stats = document.getElementById('pubStats');
   [].slice.call(document.querySelectorAll('.pub-section')).forEach(function (sec) {
     var n = sec.querySelectorAll('li').length;
@@ -71,7 +71,7 @@ author_profile: true
     stats.appendChild(a);
   });
 
-  // topic chips
+  /* topic chips */
   var chips = document.getElementById('pubChips');
   function chip(key, label) {
     var b = document.createElement('button');
@@ -86,7 +86,7 @@ author_profile: true
     if (n) chip(k, TOPICS[k] + ' <i>' + n + '</i>');
   });
 
-  // timeline: one dot per paper, by year
+  /* timeline: one dot per paper, by year */
   var svg = document.getElementById('pubTimeline'), NS = 'http://www.w3.org/2000/svg';
   var years = items.map(function (li) { return +li.dataset.year; }).filter(Boolean);
   var y0 = Math.min.apply(null, years), y1 = Math.max.apply(null, years);
