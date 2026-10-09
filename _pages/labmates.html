@@ -1,0 +1,40 @@
+---
+layout: archive
+title: "My lab mates"
+permalink: /lab-mates/
+author_profile: true
+---
+
+<p>The people I share a lab and a deadline calendar with at the <a href="https://zhijing-jin.com/">Jinesis AI Lab</a>, led by Zhijing Jin. If you like my work, you will probably like theirs more.</p>
+
+<div class="mates">
+{% for m in site.data.labmates %}
+  <div class="mate">
+    <div class="mate-head">
+      <div>
+        <div class="mate-name">{% if m.url %}<a href="{{ m.url }}">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}</div>
+        <div class="mate-focus">{{ m.focus }}</div>
+      </div>
+    </div>
+    {% if m.papers and m.papers.size > 0 %}
+      <div class="mate-papers-label">Papers I like</div>
+      <ul class="mate-papers">
+      {% for p in m.papers %}
+        <li>{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}{% if p.note %}<div class="mate-note">{{ p.note }}</div>{% endif %}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+{% endfor %}
+</div>
+
+<style>
+.mates { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 1em; }
+.mate { border: 1px solid rgba(127,127,127,.3); border-radius: 12px; padding: 14px 16px; }
+.mate-head { display: block; }
+.mate-name { font-weight: 700; }
+.mate-focus { font-size: 0.8em; opacity: .7; }
+.mate-papers-label { margin-top: 10px; font-size: 0.7em; text-transform: uppercase; letter-spacing: .06em; opacity: .6; }
+.mate-papers { font-size: 0.8em; margin: 4px 0 0; padding-left: 1.1em; }
+.mate-note { font-style: italic; opacity: .7; }
+</style>

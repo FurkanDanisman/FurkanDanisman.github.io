@@ -1,0 +1,21 @@
+# My lab mates — Jinesis AI Lab (Zhijing Jin). Add "papers I like" under each person:
+#   papers:
+#     - title: "Paper title"
+#       url: "https://arxiv.org/abs/..."
+#       note: "One line on why I like it"
+- name: Yongjin Yang
+  focus: RL · AI alignment
+  url: https://yangyongjin.github.io/
+  papers: []
+- name: Andrei Muresanu
+  focus: Interpretability · Multi-agent LLMs
+  url: https://andreimuresanu.com/
+  papers: []
+- name: Yahang Qi
+  focus: Causality · LLMs
+  url:
+  papers: []
+- name: Ryan Faulkner
+  focus: Multi-agent LLMs
+  url:
+  papers: []

@@ -12,7 +12,7 @@ site_theme               : "default"
 title                    : "Furkan Danisman"
 title_separator          : "-"
 name                     : &name "Furkan Danisman"
-description              : &description "personal description"
+description              : &description "Furkan Danisman — PhD student in Statistics at the University of Toronto and the Vector Institute. Causal inference, causal foundation models, and LLMs."
 url                      : https://FurkanDanisman.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "FurkanDanisman/FurkanDanisman.github.io"
@@ -25,7 +25,7 @@ author:
   avatar           : "Prof_HeadShot.png"
   name             : "Furkan Danisman"
   pronouns         : # example: "she/her"  
-  bio              : "PhD Student in Statistics"
+  bio              : "PhD student in Statistics. Teaching models to ask “what if?”"
   location         : "Toronto, Canada"
   employer         : "University of Toronto"
   uri              : # URL
@@ -60,7 +60,7 @@ author:
   lastfm           : # Username
   linkedin         : "furkandanisman"
   mastodon         : # URL
-  medium           : # URL
+  medium           : "https://medium.com/@furkandanisman"
   pinterest        : # Username
   soundcloud       : # Username
   steam            : # Username
@@ -150,9 +150,9 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "google-analytics-4" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  provider               :  false # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
-    tracking_id          :  "G-3Y379EJNZH"
+    tracking_id          :  # add your own GA4 ID here (the old one belonged to another site)
 
 
 # Reading Files

@@ -1,90 +1,163 @@
 ---
 layout: archive
-title: ""
+title: "Research"
 permalink: /publications/
 author_profile: true
 ---
 
-{% assign pubs = site.publications | sort: 'date' | reverse %}
+<p class="pub-intro">Everything I've written, in four piles: <b>Statistics</b>, <b>Economics</b>, <b>Healthcare</b> and <b>LLMs</b>. Click one to filter. The plain-English version of each is on the <a href="/">About</a> page, and citation counts live on <a href="https://scholar.google.com/citations?user=ovLhwwwAAAAJ&hl=en">Google Scholar</a>, which updates more often than I do.</p>
 
-<h2>Peer-Reviewed Journal Articles</h2>
-<ol class="pub-list">
+<div class="pub-stats" id="pubStats"></div>
+
+<figure class="pub-timeline">
+  <svg id="pubTimeline" role="img" aria-label="Papers per year; filled dots are first-author"></svg>
+  <figcaption>One dot per paper. <span class="dot-key filled"></span> first author &nbsp; <span class="dot-key"></span> co-author. Hover for the title, click to jump to it.</figcaption>
+</figure>
+
+<div class="pub-controls">
+  <div class="chips" id="pubChips"></div>
+  <label class="toggle"><input type="checkbox" id="firstOnly"> First-author only</label>
+  <label class="toggle"><input type="checkbox" id="tldrMode" checked> TL;DR mode</label>
+</div>
+
+{% assign pubs = site.publications | sort: 'order' %}
+{% assign sections = "manuscripts|Published|published;underreview|Under Review|under review;conferences|Talks, Posters & Other Peer-Reviewed Contributions|talks & posters;workingpapers|Working Papers|in the oven" | split: ";" %}
+
+{% for s in sections %}
+  {% assign parts = s | split: "|" %}
+  <section class="pub-section" id="sec-{{ parts[0] }}" data-label="{{ parts[2] }}">
+  <h2>{{ parts[1] }}</h2>
+  <ol class="pub-list">
   {% for post in pubs %}
-    {% if post.category == "manuscripts" %}
-      <li>
+    {% if post.category == parts[0] %}
+      <li id="pub-{{ post.slug }}" data-topics="{{ post.topics }}" data-title="{{ post.title | escape }}"
+          data-first="{% if post.citation contains 'Danisman, F.*' %}1{% else %}0{% endif %}">
         {{ post.citation }} <em>{{ post.title }}.</em> {{ post.venue }}.
-        {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank">[Paper]</a>{% endif %}
+        {% if post.paperurl %}<a class="pub-link" href="{{ post.paperurl }}" target="_blank">[Paper]</a>{% endif %}
+        {% if post.mediaurl %}<a class="pub-link" href="{{ post.mediaurl }}" target="_blank">[In the news]</a>{% endif %}
+        {% if post.tldr %}<div class="tldr">TL;DR: {{ post.tldr }}</div>{% endif %}
       </li>
     {% endif %}
   {% endfor %}
-</ol>
+  </ol>
+  </section>
+{% endfor %}
+<p class="pub-empty" id="pubEmpty" hidden>Nothing matches — which, statistically speaking, is also a result.</p>
 
-<h2>Under Review</h2>
-<ol class="pub-list">
-  {% for post in pubs %}
-    {% if post.category == "underreview" %}
-      <li>
-        {{ post.citation }} <em>{{ post.title }}.</em> {{ post.venue }}.
-        {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank">[Paper]</a>{% endif %}
-      </li>
-    {% endif %}
-  {% endfor %}
-</ol>
+<script>
+(function () {
+  var TOPICS = {
+    stats:      'Statistics',
+    econ:       'Economics',
+    healthcare: 'Healthcare',
+    llms:       'LLMs'
+  };
+  var items = [].slice.call(document.querySelectorAll('.pub-list li'));
+  var q = (location.search.match(/[?&]topic=(\w+)/) || [])[1];
+  var state = {topic: q || null, firstOnly: false};
 
-<h2>Other Peer-Reviewed Contributions</h2>
-<ol class="pub-list">
-  {% for post in pubs %}
-    {% if post.category == "conferences" %}
-      <li>
-        {{ post.citation }} <em>{{ post.title }}.</em> {{ post.venue }}.
-        {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank">[Paper]</a>{% endif %}
-      </li>
-    {% endif %}
-  {% endfor %}
-</ol>
+  items.forEach(function (li) {
+    var y = (li.textContent.match(/\((20\d\d)\)/) || [])[1];
+    li.dataset.year = y || '';
+  });
 
-<h2>Non-Peer-Reviewed Contributions</h2>
-<ol class="pub-list">
-  {% for post in pubs %}
-    {% if post.category == "nonpeerreviewed" %}
-      <li>
-        {{ post.citation }} <em>{{ post.title }}.</em> {{ post.venue }}.
-        {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank">[Paper]</a>{% endif %}
-      </li>
-    {% endif %}
-  {% endfor %}
-</ol>
+  // summary strip
+  var stats = document.getElementById('pubStats');
+  [].slice.call(document.querySelectorAll('.pub-section')).forEach(function (sec) {
+    var n = sec.querySelectorAll('li').length;
+    var a = document.createElement('a');
+    a.href = '#' + sec.id; a.className = 'stat';
+    a.innerHTML = '<b>' + n + '</b><span>' + sec.dataset.label + '</span>';
+    stats.appendChild(a);
+  });
 
-<h2>Working Papers</h2>
-<ol class="pub-list">
-  {% for post in pubs %}
-    {% if post.category == "workingpapers" %}
-      <li>
-        {{ post.citation }} <em>{{ post.title }}.</em>
-      </li>
-    {% endif %}
-  {% endfor %}
-</ol>
+  // topic chips
+  var chips = document.getElementById('pubChips');
+  function chip(key, label) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip'; b.dataset.topic = key || '';
+    b.innerHTML = label;
+    b.onclick = function () { state.topic = (state.topic === key) ? null : key; apply(); };
+    chips.appendChild(b);
+  }
+  chip(null, 'All <i>' + items.length + '</i>');
+  Object.keys(TOPICS).forEach(function (k) {
+    var n = items.filter(function (li) { return li.dataset.topics.split(' ').indexOf(k) >= 0; }).length;
+    if (n) chip(k, TOPICS[k] + ' <i>' + n + '</i>');
+  });
+
+  // timeline: one dot per paper, by year
+  var svg = document.getElementById('pubTimeline'), NS = 'http://www.w3.org/2000/svg';
+  var years = items.map(function (li) { return +li.dataset.year; }).filter(Boolean);
+  var y0 = Math.min.apply(null, years), y1 = Math.max.apply(null, years);
+  var colW = 120, r = 7, gap = 18, H = 0, byYear = {};
+  items.forEach(function (li) { (byYear[li.dataset.year] = byYear[li.dataset.year] || []).push(li); });
+  for (var y = y0; y <= y1; y++) H = Math.max(H, (byYear[y] || []).length);
+  var W = (y1 - y0 + 1) * colW, height = H * gap + 34;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + height);
+  for (var y = y0; y <= y1; y++) {
+    var cx = (y - y0) * colW + colW / 2;
+    var t = document.createElementNS(NS, 'text');
+    t.setAttribute('x', cx); t.setAttribute('y', height - 6); t.setAttribute('text-anchor', 'middle'); t.textContent = y;
+    svg.appendChild(t);
+    (byYear[y] || []).forEach(function (li, i) {
+      var c = document.createElementNS(NS, 'circle');
+      c.setAttribute('cx', cx + ((i % 2) ? 9 : -9)); c.setAttribute('cy', height - 30 - Math.floor(i / 2) * gap * 0.9 - (i % 2) * 6); c.setAttribute('r', r);
+      c.setAttribute('class', 'tl-dot' + (li.dataset.first === '1' ? ' filled' : ''));
+      var tip = document.createElementNS(NS, 'title'); tip.textContent = li.dataset.title + ' (' + y + ')'; c.appendChild(tip);
+      c.addEventListener('click', function () { li.scrollIntoView({behavior: 'smooth', block: 'center'}); li.classList.add('flash'); setTimeout(function () { li.classList.remove('flash'); }, 1600); });
+      li._dot = c;
+      svg.appendChild(c);
+    });
+  }
+
+  function apply() {
+    var shown = 0;
+    items.forEach(function (li) {
+      var ok = (!state.topic || li.dataset.topics.split(' ').indexOf(state.topic) >= 0) && (!state.firstOnly || li.dataset.first === '1');
+      li.hidden = !ok; if (li._dot) li._dot.classList.toggle('dim', !ok); shown += ok;
+    });
+    [].slice.call(document.querySelectorAll('.pub-section')).forEach(function (sec) {
+      sec.hidden = !sec.querySelector('li:not([hidden])');
+    });
+    [].slice.call(chips.children).forEach(function (b) { b.classList.toggle('on', (b.dataset.topic || null) === state.topic); });
+    document.getElementById('pubEmpty').hidden = shown > 0;
+  }
+  document.getElementById('firstOnly').onchange = function () { state.firstOnly = this.checked; apply(); };
+  document.getElementById('tldrMode').onchange = function () { document.body.classList.toggle('no-tldr', !this.checked); };
+  apply();
+})();
+</script>
 
 <style>
-.pub-list {
-  font-size: 0.85em;
-  line-height: 1.5;
-  padding-left: 1.5em;
-}
-.pub-list li {
-  margin-bottom: 0.5em;
-}
-.pub-list a {
-  color: #494e52;
-  text-decoration: none;
-}
-.pub-list a:hover {
-  text-decoration: underline;
-}
-h2 {
-  font-size: 1.15em;
-  margin-top: 1.5em;
-  margin-bottom: 0.3em;
-}
+.pub-intro { font-size: 0.9em; }
+.pub-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin: 1em 0; }
+.pub-stats .stat { display: block; border: 1px solid rgba(127,127,127,.3); border-radius: 10px; padding: 10px 14px; text-decoration: none; color: inherit; }
+.pub-stats .stat:hover { border-color: currentColor; }
+.pub-stats b { display: block; font-size: 1.8em; line-height: 1.1; }
+.pub-stats span { font-size: 0.8em; opacity: .7; }
+.pub-timeline { margin: 0.5em 0 1em; }
+.pub-timeline svg { width: 100%; max-height: 190px; }
+.pub-timeline text { fill: currentColor; opacity: .6; font-size: 12px; }
+.tl-dot { fill: none; stroke: currentColor; stroke-width: 2; cursor: pointer; transition: opacity .2s; }
+.tl-dot.filled { fill: #2a78d6; stroke: #2a78d6; }
+.tl-dot.dim { opacity: .15; }
+.tl-dot:hover { stroke-width: 3.5; }
+.pub-timeline figcaption { font-size: 0.75em; opacity: .7; }
+.dot-key { display: inline-block; width: 10px; height: 10px; border-radius: 50%; border: 2px solid currentColor; vertical-align: -1px; }
+.dot-key.filled { background: #2a78d6; border-color: #2a78d6; }
+.pub-controls { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin-bottom: 0.5em; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: inherit; font-size: 0.75em; border: 1px solid rgba(127,127,127,.35); background: none; color: inherit; border-radius: 99px; padding: 3px 11px; cursor: pointer; }
+.chip i { font-style: normal; opacity: .6; margin-left: 2px; }
+.chip.on { background: #2a78d6; border-color: #2a78d6; color: #fff; }
+.toggle { font-size: 0.75em; cursor: pointer; white-space: nowrap; }
+.pub-list { font-size: 0.85em; line-height: 1.5; padding-left: 1.5em; }
+.pub-list li { margin-bottom: 0.8em; border-radius: 6px; transition: background .4s; }
+.pub-list li.flash { background: rgba(42,120,214,.15); }
+.pub-link { white-space: nowrap; }
+.tldr { font-style: italic; opacity: .7; margin-top: 0.15em; }
+body.no-tldr .tldr { display: none; }
+.pub-empty { font-style: italic; opacity: .7; }
+h2 { font-size: 1.15em; margin-top: 1.5em; margin-bottom: 0.3em; }
 </style>
