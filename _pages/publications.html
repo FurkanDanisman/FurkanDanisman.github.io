@@ -32,7 +32,7 @@ author_profile: true
     {% if post.category == parts[0] %}
       <li id="pub-{{ post.slug }}" data-topics="{{ post.topics }}" data-title="{{ post.title | escape }}"
           data-first="{% if post.citation contains 'Danisman, F.*' %}1{% else %}0{% endif %}">
-        {{ post.citation }} <em>{{ post.title }}.</em> {{ post.venue }}.
+        {% assign last = post.title | slice: -1 %}{{ post.citation }} <em>{{ post.title }}{% unless last == '?' or last == '!' %}.{% endunless %}</em> {{ post.venue }}.
         {% if post.paperurl %}<a class="pub-link" href="{{ post.paperurl }}" target="_blank">[Paper]</a>{% endif %}
         {% if post.mediaurl %}<a class="pub-link" href="{{ post.mediaurl }}" target="_blank">[In the news]</a>{% endif %}
         {% if post.tldr %}<div class="tldr">TL;DR: {{ post.tldr }}</div>{% endif %}
@@ -90,10 +90,10 @@ author_profile: true
   var svg = document.getElementById('pubTimeline'), NS = 'http://www.w3.org/2000/svg';
   var years = items.map(function (li) { return +li.dataset.year; }).filter(Boolean);
   var y0 = Math.min.apply(null, years), y1 = Math.max.apply(null, years);
-  var colW = 120, r = 7, gap = 18, H = 0, byYear = {};
+  var colW = 110, r = 8, gap = 20, H = 0, byYear = {};
   items.forEach(function (li) { (byYear[li.dataset.year] = byYear[li.dataset.year] || []).push(li); });
-  for (var y = y0; y <= y1; y++) H = Math.max(H, (byYear[y] || []).length);
-  var W = (y1 - y0 + 1) * colW, height = H * gap + 34;
+  for (var y = y0; y <= y1; y++) H = Math.max(H, Math.ceil((byYear[y] || []).length / 2));
+  var W = (y1 - y0 + 1) * colW, height = H * gap + 40;
   svg.setAttribute('viewBox', '0 0 ' + W + ' ' + height);
   for (var y = y0; y <= y1; y++) {
     var cx = (y - y0) * colW + colW / 2;
@@ -102,7 +102,7 @@ author_profile: true
     svg.appendChild(t);
     (byYear[y] || []).forEach(function (li, i) {
       var c = document.createElementNS(NS, 'circle');
-      c.setAttribute('cx', cx + ((i % 2) ? 9 : -9)); c.setAttribute('cy', height - 30 - Math.floor(i / 2) * gap * 0.9 - (i % 2) * 6); c.setAttribute('r', r);
+      c.setAttribute('cx', cx + ((i % 2) ? 10 : -10)); c.setAttribute('cy', height - 32 - Math.floor(i / 2) * gap); c.setAttribute('r', r);
       c.setAttribute('class', 'tl-dot' + (li.dataset.first === '1' ? ' filled' : ''));
       var tip = document.createElementNS(NS, 'title'); tip.textContent = li.dataset.title + ' (' + y + ')'; c.appendChild(tip);
       c.addEventListener('click', function () { li.scrollIntoView({behavior: 'smooth', block: 'center'}); li.classList.add('flash'); setTimeout(function () { li.classList.remove('flash'); }, 1600); });
@@ -137,7 +137,7 @@ author_profile: true
 .pub-stats b { display: block; font-size: 1.8em; line-height: 1.1; }
 .pub-stats span { font-size: 0.8em; opacity: .7; }
 .pub-timeline { margin: 0.5em 0 1em; }
-.pub-timeline svg { width: 100%; max-height: 190px; }
+.pub-timeline svg { width: 100%; max-width: 520px; display: block; }
 .pub-timeline text { fill: currentColor; opacity: .6; font-size: 12px; }
 .tl-dot { fill: none; stroke: currentColor; stroke-width: 2; cursor: pointer; transition: opacity .2s; }
 .tl-dot.filled { fill: #2a78d6; stroke: #2a78d6; }
@@ -151,7 +151,8 @@ author_profile: true
 .chip { font: inherit; font-size: 0.75em; border: 1px solid rgba(127,127,127,.35); background: none; color: inherit; border-radius: 99px; padding: 3px 11px; cursor: pointer; }
 .chip i { font-style: normal; opacity: .6; margin-left: 2px; }
 .chip.on { background: #2a78d6; border-color: #2a78d6; color: #fff; }
-.toggle { font-size: 0.75em; cursor: pointer; white-space: nowrap; }
+.toggle { font-size: 0.75em; cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 5px; }
+.toggle input { margin: 0; width: auto; display: inline-block; }
 .pub-list { font-size: 0.85em; line-height: 1.5; padding-left: 1.5em; }
 .pub-list li { margin-bottom: 0.8em; border-radius: 6px; transition: background .4s; }
 .pub-list li.flash { background: rgba(42,120,214,.15); }

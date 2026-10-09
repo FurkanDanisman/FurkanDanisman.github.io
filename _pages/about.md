@@ -38,12 +38,12 @@ Hi, I'm Furkan. I'm a PhD student in Statistics at the **University of Toronto**
 <h3>Economics</h3>
 <svg class="fig" viewBox="0 0 320 126" role="img" aria-label="A lender deposits into a smart contract, which lends to a borrower who posts collateral; if the collateral loses value the loan is liquidated">
   <defs><marker id="a2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z"/></marker></defs>
-  <rect class="box" x="4" y="30" width="70" height="44" rx="8"/><text x="39" y="56" text-anchor="middle">lender</text>
+  <rect class="box" x="4" y="30" width="60" height="44" rx="8"/><text x="34" y="56" text-anchor="middle">lender</text>
   <rect class="box hl" x="115" y="30" width="90" height="44" rx="8"/><text x="160" y="48" text-anchor="middle">smart contract</text><text x="160" y="63" text-anchor="middle">(no bank)</text>
   <rect class="box" x="246" y="30" width="70" height="44" rx="8"/><text x="281" y="56" text-anchor="middle">borrower</text>
-  <path class="arr" d="M74,42 H112" marker-end="url(#a2)"/><text class="lbl" x="93" y="36" text-anchor="middle">deposits</text>
-  <path class="arr" d="M205,42 H243" marker-end="url(#a2)"/><text class="lbl" x="224" y="36" text-anchor="middle">loan</text>
-  <path class="arr" d="M246,64 H208" marker-end="url(#a2)"/><text class="lbl" x="227" y="80" text-anchor="middle">collateral</text>
+  <path class="arr" d="M64,42 H112" marker-end="url(#a2)"/><text class="lbl" x="89" y="24" text-anchor="middle">deposits</text>
+  <path class="arr" d="M205,42 H243" marker-end="url(#a2)"/><text class="lbl" x="225" y="24" text-anchor="middle">loan</text>
+  <path class="arr" d="M246,64 H208" marker-end="url(#a2)"/><text class="lbl" x="227" y="88" text-anchor="middle">collateral</text>
   <rect class="box note" x="60" y="96" width="200" height="24" rx="6"/><text class="lbl" x="160" y="112" text-anchor="middle">collateral drops in value → auto-liquidated</text>
 </svg>
 <p><b>The question.</b> What happens when you lend money to a stranger on the internet, with no bank in the middle? And what if AI agents ran the systems banks use to move billions to each other every day?</p>
