@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-<p class="pub-intro">Everything I've written, in four piles: <b>Statistics</b>, <b>Economics</b>, <b>Healthcare</b> and <b>LLMs</b>. Click one to filter. Citation counts live on <a href="https://scholar.google.com/citations?user=ovLhwwwAAAAJ&hl=en">Google Scholar</a>, which updates more often than I do.</p>
+<p class="pub-intro">My work is in three piles: Statistics/CS, Economics, and Cancer Research. Click one to filter.</p>
 
 <div class="pub-stats" id="pubStats"></div>
 
@@ -21,7 +21,7 @@ author_profile: true
 </div>
 
 {% assign pubs = site.publications | sort: 'order' %}
-{% assign sections = "manuscripts|Published|published;underreview|Under Review|under review;conferences|Talks, Posters & Other Peer-Reviewed Contributions|talks & posters;workingpapers|Working Papers|in the oven" | split: ";" %}
+{% assign sections = "manuscripts|Published|published;underreview|Under Review|under review;conferences|Talks, Posters & Other Peer-Reviewed Contributions|talks & posters;workingpapers|Working Papers|working on it" | split: ";" %}
 
 {% for s in sections %}
   {% assign parts = s | split: "|" %}
@@ -47,10 +47,9 @@ author_profile: true
 <script>
 (function () {
   var TOPICS = {
-    stats:      'Statistics',
-    econ:       'Economics',
-    healthcare: 'Healthcare',
-    llms:       'LLMs'
+    stats:  'Statistics/CS',
+    econ:   'Economics',
+    cancer: 'Cancer Research'
   };
   var items = [].slice.call(document.querySelectorAll('.pub-list li'));
   var q = (location.search.match(/[?&]topic=(\w+)/) || [])[1];

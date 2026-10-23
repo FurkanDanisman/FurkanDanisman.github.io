@@ -1,7 +1,7 @@
 ---
 title: 'Strategic Interaction Among AI Agents: Evidence from Payment Systems'
 collection: publications
-topics: 'econ llms'
+topics: 'econ stats'
 category: underreview
 order: 5
 citation: '<b>Danisman, F.*</b>, Desai, A., Jiang, J., Rivadeneyra, F., &amp; Azad, T. (2026).'

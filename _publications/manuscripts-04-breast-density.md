@@ -1,7 +1,7 @@
 ---
 title: 'The Impact of Changes in Breast Density Over Time on Breast Cancer Risk'
 collection: publications
-topics: 'healthcare stats'
+topics: 'cancer stats'
 category: manuscripts
 order: 4
 citation: 'Kulturoglu, M.O., Aydin, F., Sagdic, M.F., Aslan, F., Oflaz, Z., <b>Danisman, F.B.</b>, Kalaylioglu, Z., &amp; Dogan, L. (2025).'

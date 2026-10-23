@@ -1,7 +1,7 @@
 ---
 title: 'Decoupling Risk and Masking in Mammographic Density under Irregular Follow-Up Using a Latent Markov Progression–Detection Framework'
 collection: publications
-topics: 'healthcare stats'
+topics: 'cancer stats'
 category: underreview
 order: 3
 citation: '<b>Danisman, F.*</b>, Oflaz, Z., Kalaylioglu, Z., Kulturoglu, M.O., &amp; Dogan, L. (2026).'

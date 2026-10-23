@@ -3,8 +3,8 @@ main:
     url: /
   - title: "Research"
     url: /publications/
-  - title: "My lab mates"
-    url: /lab-mates/
+  - title: "Friends"
+    url: /friends/
   - title: "Teaching"
     url: /teaching/
   - title: "CV"

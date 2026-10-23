@@ -1,7 +1,7 @@
 ---
 title: 'CauSciBench: Can LLMs Automate Causal Inference in Real-World Scientific Research?'
 collection: publications
-topics: 'llms'
+topics: 'stats'
 category: manuscripts
 order: 6
 citation: 'Acharya, S., Zhang, T.J., Kim, A., Haghighat, A., Xianlin, S., Shrestha, R.B., Mordig, M., <b>Danisman, F.</b>, Chiu, J., Qi, Y.C., Schölkopf, B., Sachan, M., &amp; Jin, Z. (2026).'
