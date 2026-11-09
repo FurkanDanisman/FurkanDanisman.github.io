@@ -15,7 +15,7 @@ So, I will mention what I am doing at the moment, but most likely I will forget 
 
 Anyway, I'm a PhD student in Statistics at the **University of Toronto** and a researcher at the **[Vector Institute](https://vectorinstitute.ai/)**, co-supervised by two great minds: [Dehan Kong](https://www.statistics.utoronto.ca/people/directories/all-faculty/dehan-kong) (Statistics) and [Zhijing Jin](https://zhijing-jin.com/) (Computer Science).
 
-I mainly work on causality and hope to win an [Ig Nobel Prize](https://improbable.com/ig/) one day.
+I mainly work on causality and hope to win an [Ig Nobel Prize](https://en.wikipedia.org/wiki/Ig_Nobel_Prize) one day.
 
 ## How I got here
 
