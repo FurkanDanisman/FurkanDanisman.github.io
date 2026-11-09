@@ -35,6 +35,7 @@ author_profile: true
         {% assign last = post.title | slice: -1 %}{{ post.citation }} <em>{{ post.title }}{% unless last == '?' or last == '!' %}.{% endunless %}</em> {{ post.venue }}.
         {% if post.paperurl %}<a class="pub-link" href="{{ post.paperurl }}" target="_blank">[Paper]</a>{% endif %}
         {% if post.mediaurl %}<a class="pub-link" href="{{ post.mediaurl }}" target="_blank">[In the news]</a>{% endif %}
+        {% if post.podcasturl %}<a class="pub-link" href="{{ post.podcasturl }}" target="_blank">[Podcast]</a>{% endif %}
         {% if post.tldr %}<div class="tldr">TL;DR: {{ post.tldr }}</div>{% endif %}
       </li>
     {% endif %}
