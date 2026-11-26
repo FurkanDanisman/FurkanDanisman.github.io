@@ -21,7 +21,6 @@ First Class with Distinction · GPA 3.76/4
 
 - **NSERC Canada Graduate Research Scholarship**, $27,000 (2026 – 2027)
 - **Biostatistics Section Award, Best Student Research Presentation**, Statistical Society of Canada 2026 Annual Meeting, $500 (2026)
-- **SGS Conference / Research Travel Grant**, School of Graduate Studies, University of Toronto, $480 (2026)
 
 ## Experience
 
@@ -29,7 +28,7 @@ First Class with Distinction · GPA 3.76/4
 Causal foundation models with amortized Bayesian inference; causal inference in NLP and LLMs.
 
 **Teaching Assistant**, Department of Statistical Sciences, University of Toronto · 2025 – present  
-Tutorials for STA313 (Data Visualization) and STA238 (Statistics and Data Analysis II). Guest lecture on Tabular Prior-data Fitted Networks in STA2112 (Statistical Learning), November 2026.
+Tutorials for STA313 (Data Visualization) and STA238 (Statistics and Data Analysis II).
 
 **Mentor, STA492 (Research Seminar)**, Department of Statistical Sciences, University of Toronto · 2026 – present  
 Mentoring undergraduate students through their research projects.
@@ -46,6 +45,10 @@ Mentoring undergraduate students through their research projects.
 **Research Fellow (Boursier)**, The Scientific and Technological Research Council of Türkiye (TÜBİTAK), Ankara · 2024  
 - Developed a two-phase Bayesian–frequentist model for longitudinal ordinal data, and showed that changes in breast density over 5–8 years of follow-up significantly affect cancer risk.
 - Published in *Scientific Reports* (Nature Portfolio).
+
+## Guest Lectures
+
+**Tabular Prior-data Fitted Networks**, STA2112: Statistical Learning (master's course), University of Toronto · November 2026
 
 ## Research
 
