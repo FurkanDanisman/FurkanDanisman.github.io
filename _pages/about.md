@@ -11,7 +11,7 @@ Research / Soccer / [Lex Fridman](https://www.youtube.com/@lexfridman).
 
 There is a pub called Firkin, and people assume that's also how my name is pronounced. Don't be those people. Be different. Be free…
 
-So, I'll mention what I'm doing at the moment, but there's a chance I'll forget to update it, so take it with a grain of salt. This happened while I was learning German: *Ich bin immer noch fünfzehn Jahre alt.*
+So, I'll mention what I'm doing at the moment, but there's a chance I'll forget to update it, so take it with a grain of salt. This happened while I was learning German: *Ich bin still fünfzehn Jahre alt.*
 
 Anyway, I'm a PhD student in Statistics at the **University of Toronto** and a researcher at the **[Vector Institute](https://vectorinstitute.ai/)**, co-supervised by two great minds: [Dehan Kong](https://www.statistics.utoronto.ca/people/directories/all-faculty/dehan-kong) (Statistics) and [Zhijing Jin](https://zhijing-jin.com/) (Computer Science).
 
