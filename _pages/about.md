@@ -30,6 +30,7 @@ I mainly work on causality and hope to win an [Ig Nobel Prize](https://en.wikipe
 
 <ul class="news">
   <li><span class="when">2026</span> Won an <b>NSERC Canada Graduate Research Scholarship</b>.</li>
+  <li><span class="when">Fall 2026</span> Started as a mentor for <b>STA492</b>, the undergraduate research seminar course at the University of Toronto.</li>
   <li><span class="when">Fall 2026</span> Gave a guest lecture on <b>Tabular Prior-data Fitted Networks</b> in <b>STA2112</b>, a master's course at the University of Toronto.</li>
   <li><span class="when">Sep 2026</span> The mammogram paper made it onto <a href="https://stream.interpress.com/temp/48a031d0-4b5b-446f-a091-4d113ea575d1.html">Turkish national news</a>. Both new preprints are on arXiv: <a href="https://arxiv.org/abs/2607.16793">mammograms</a> and <a href="https://arxiv.org/abs/2607.13182">binned data</a>.</li>
   <li><span class="when">Jul 2026</span> <b>CauSciBench</b> at <b>ICML 2026</b> in Seoul. Can AI do the cause-and-effect analysis in real scientific papers?</li>

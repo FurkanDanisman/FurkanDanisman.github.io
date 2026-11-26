@@ -31,6 +31,9 @@ Causal foundation models with amortized Bayesian inference; causal inference in 
 **Teaching Assistant**, Department of Statistical Sciences, University of Toronto · 2025 – present  
 Tutorials for STA313 (Data Visualization) and STA238 (Statistics and Data Analysis II).
 
+**Mentor, STA492 (Research Seminar)**, Department of Statistical Sciences, University of Toronto · 2026 – present  
+Mentoring undergraduate students through their research projects.
+
 **Research Assistant**, Banking and Payments Department, Bank of Canada, Ottawa · 2025  
 - Co-authored a paper on decentralized-finance lending platforms, where borrowers and lenders never need to trust each other: returns, leverage and liquidation risks.
 - The paper reached 300,000+ views, 40+ news stories and blogs, 100+ reposts and two podcast invitations, including an invitation to Episode 10 of the [MetaMarkets podcast](https://open.spotify.com/episode/55dtaPZMi2r3UkKGojOI6V) with Jan Philipp Fritsche and Jón Egilsson.
