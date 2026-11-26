@@ -31,7 +31,7 @@ Causal foundation models with amortized Bayesian inference; causal inference in 
 Tutorials for STA313 (Data Visualization) and STA238 (Statistics and Data Analysis II).
 
 **Mentor, STA492 (Research Seminar)**, Department of Statistical Sciences, University of Toronto · 2026 – present  
-Mentoring undergraduate students through their research projects.
+Mentoring undergraduate students on a research project on in-context manipulation for tabular foundation models.
 
 **Research Assistant**, Banking and Payments Department, Bank of Canada, Ottawa · 2025  
 - Co-authored a paper on decentralized-finance lending platforms, where borrowers and lenders never need to trust each other: returns, leverage and liquidation risks.
@@ -46,10 +46,6 @@ Mentoring undergraduate students through their research projects.
 - Developed a two-phase Bayesian–frequentist model for longitudinal ordinal data, and showed that changes in breast density over 5–8 years of follow-up significantly affect cancer risk.
 - Published in *Scientific Reports* (Nature Portfolio).
 
-## Guest Lectures
-
-**Tabular Prior-data Fitted Networks**, STA2112: Statistical Learning (master's course), University of Toronto · November 2026
-
 ## Research
 
-7 publications, 6 papers under review, 4 talks and posters, and 1 working paper. The full list, with links and one-line summaries, is on the [Research](/publications/) page.
+7 publications, 6 papers under review, 4 posters and presentations, 1 talk (a guest lecture on Tabular Prior-data Fitted Networks in STA2112: Statistical Learning, November 2026), and 1 working paper. The full list, with links and one-line summaries, is on the [Research](/publications/) page.

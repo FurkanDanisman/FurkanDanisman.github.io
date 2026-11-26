@@ -21,7 +21,7 @@ author_profile: true
 </div>
 
 {% assign pubs = site.publications | sort: 'order' %}
-{% assign sections = "manuscripts|Published|published;underreview|Under Review|under review;conferences|Talks, Posters & Other Peer-Reviewed Contributions|talks & posters;workingpapers|Working Papers|working on it" | split: ";" %}
+{% assign sections = "manuscripts|Published|published;underreview|Under Review|under review;conferences|Other Peer-Reviewed Contributions|posters & presentations;talks|Talks|talks;workingpapers|Working Papers|working on it" | split: ";" %}
 
 {% for s in sections %}
   {% assign parts = s | split: "|" %}
@@ -91,7 +91,7 @@ author_profile: true
   var years = items.map(function (li) { return +li.dataset.year; }).filter(Boolean);
   var y0 = Math.min.apply(null, years), y1 = Math.max.apply(null, years);
   var colW = 110, r = 8, gap = 20, H = 0, byYear = {};
-  items.forEach(function (li) { (byYear[li.dataset.year] = byYear[li.dataset.year] || []).push(li); });
+  items.forEach(function (li) { if (!li.closest('#sec-talks')) (byYear[li.dataset.year] = byYear[li.dataset.year] || []).push(li); });
   for (var y = y0; y <= y1; y++) H = Math.max(H, Math.ceil((byYear[y] || []).length / 2));
   var W = (y1 - y0 + 1) * colW, height = H * gap + 40;
   svg.setAttribute('viewBox', '0 0 ' + W + ' ' + height);
