@@ -9,7 +9,7 @@ author_profile: true
 
 <ul class="mentees">
 {% for m in site.data.mentees %}
-  <li><b>{{ m.name }}</b><span>{{ m.school }} · {{ m.year }}</span></li>
+  <li><b>{{ m.name }}</b><span>{% if m.program %}{{ m.program }} · {% endif %}{{ m.school }} · {{ m.year }}</span></li>
 {% endfor %}
 </ul>
 

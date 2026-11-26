@@ -29,7 +29,7 @@ First Class with Distinction · GPA 3.76/4
 Causal foundation models with amortized Bayesian inference; causal inference in NLP and LLMs.
 
 **Teaching Assistant**, Department of Statistical Sciences, University of Toronto · 2025 – present  
-Tutorials for STA313 (Data Visualization) and STA238 (Statistics and Data Analysis II).
+Tutorials for STA313 (Data Visualization) and STA238 (Statistics and Data Analysis II). Guest lecture on Tabular Prior-data Fitted Networks in STA2112 (Statistical Learning), November 2026.
 
 **Mentor, STA492 (Research Seminar)**, Department of Statistical Sciences, University of Toronto · 2026 – present  
 Mentoring undergraduate students through their research projects.
@@ -49,4 +49,4 @@ Mentoring undergraduate students through their research projects.
 
 ## Research
 
-7 publications, 5 papers under review, 4 talks and posters, and 2 working papers. The full list, with links and one-line summaries, is on the [Research](/publications/) page.
+7 publications, 6 papers under review, 4 talks and posters, and 1 working paper. The full list, with links and one-line summaries, is on the [Research](/publications/) page.
