@@ -17,7 +17,7 @@ author_profile: true
 <div class="pub-controls">
   <div class="chips" id="pubChips"></div>
   <label class="toggle"><input type="checkbox" id="firstOnly"> First-author only</label>
-  <label class="toggle"><input type="checkbox" id="tldrMode" checked> TL;DR mode</label>
+  <label class="toggle"><input type="checkbox" id="tldrMode"> TL;DR mode</label>
 </div>
 
 {% assign pubs = site.publications | sort: 'order' %}
@@ -124,7 +124,7 @@ author_profile: true
     document.getElementById('pubEmpty').hidden = shown > 0;
   }
   document.getElementById('firstOnly').onchange = function () { state.firstOnly = this.checked; apply(); };
-  document.getElementById('tldrMode').onchange = function () { document.body.classList.toggle('no-tldr', !this.checked); };
+  document.getElementById('tldrMode').onchange = function () { document.body.classList.toggle('show-tldr', this.checked); };
   apply();
 })();
 </script>
@@ -157,8 +157,8 @@ author_profile: true
 .pub-list li { margin-bottom: 0.8em; border-radius: 6px; transition: background .4s; }
 .pub-list li.flash { background: rgba(42,120,214,.15); }
 .pub-link { white-space: nowrap; }
-.tldr { font-style: italic; opacity: .7; margin-top: 0.15em; }
-body.no-tldr .tldr { display: none; }
+.tldr { display: none; font-style: italic; opacity: .7; margin-top: 0.15em; }
+body.show-tldr .tldr { display: block; }
 .pub-empty { font-style: italic; opacity: .7; }
 h2 { font-size: 1.15em; margin-top: 1.5em; margin-bottom: 0.3em; }
 </style>
