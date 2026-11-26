@@ -7,6 +7,8 @@ main:
     url: /friends/
   - title: "Teaching"
     url: /teaching/
+  - title: "Mentees"
+    url: /mentees/
   - title: "CV"
     url: /cv/
   - title: "Blog"
