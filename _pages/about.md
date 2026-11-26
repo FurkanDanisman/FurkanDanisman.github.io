@@ -36,7 +36,6 @@ I mainly work on causality and hope to win an [Ig Nobel Prize](https://en.wikipe
   <li><span class="when">Jul 2026</span> <b>CauSciBench</b> at <b>ICML 2026</b> in Seoul. Can AI do the cause-and-effect analysis in real scientific papers?</li>
   <li><span class="when">Jun 2026</span> <b>Best Student Research Presentation</b>, Statistical Society of Canada (Biostatistics Section), for the mammogram work.</li>
   <li><span class="when">Apr 2026</span> Invited to the <a href="https://open.spotify.com/episode/55dtaPZMi2r3UkKGojOI6V">MetaMarkets podcast</a> (Episode 10, <i>"Aave Hack and Economics: Can Aave Compete with Traditional Banks?"</i>) to talk about our Bank of Canada DeFi lending paper, with hosts <b>Jan Philipp Fritsche</b> (Oak Security) and <b>Jón Egilsson</b> (former Chair of the Central Bank of Iceland and co-founder of Monerium).</li>
-  <li><span class="when">Sep 2025</span> Started the PhD, and started teaching tutorials for <b>STA313</b> (Data Visualization, where I gently discourage pie charts) and <b>STA238</b>.</li>
 </ul>
 
 My ultimate goal in life is to be friends with a gorilla.
