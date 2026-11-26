@@ -20,10 +20,10 @@ I mainly work on causality and hope to win an [Ig Nobel Prize](https://en.wikipe
 ## How I got here
 
 <div class="path">
-  <div><b>Ankara</b><span>Modelled years of mammograms as a research fellow at TÜBİTAK, Türkiye's national science council</span></div>
-  <div><b>York University</b><span>BSc in Statistics, First Class with Distinction, and a density method for binned data</span></div>
-  <div><b>Bank of Canada</b><span>DeFi lending, and AI agents running a pretend payment system</span></div>
-  <div><b>UofT + Vector</b><span>PhD (2025–): models that answer "what if?"</span></div>
+  <div><b>Ankara</b><span>Worked on breast cancer as a research fellow at TÜBİTAK, Türkiye's national science council</span></div>
+  <div><b>York University</b><span>BSc in Statistics, First Class with Distinction</span></div>
+  <div><b>Bank of Canada</b><span>Worked on DeFi lending and AI in payment systems</span></div>
+  <div><b>UofT + Vector</b><span>PhD (2025–)</span></div>
 </div>
 
 ## Lately
